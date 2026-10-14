@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="AlgoSphere — interactive DSA visualizer and complexity lab">
+<title>AlgoSphere — DSA Visualizer</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="#"><span class="logo">A<span>•</span></span><span>AlgoSphere<small>LEARN BY VISUALIZING</small></span></a>
+    <p class="nav-caption">LEARNING LAB</p>
+    <button class="nav active" data-tab="sorting"><span>↕</span> Sorting algorithms</button>
+    <button class="nav" data-tab="searching"><span>⌕</span> Searching algorithms</button>
+    <button class="nav" data-tab="complexity"><span>◫</span> Complexity guide</button>
+    <div class="sidebar-note"><div class="spark">✦</div><strong>Understand the why.</strong><p>Watch each algorithm work, one step at a time.</p></div>
+    <div class="side-footer"><span class="status-dot"></span> Interactive learning mode <span class="version">v1.0</span></div>
+  </aside>
+  <main class="main">
+    <header class="header"><div><p class="eyebrow">DATA STRUCTURES & ALGORITHMS</p><h1 id="pageTitle">Sorting Visualizer</h1><p class="subhead" id="pageSubtitle">Turn abstract algorithms into something you can see.</p></div><span class="pill"><span class="status-dot"></span> READY TO EXPLORE</span></header>
+    <section class="metrics">
+      <article class="metric"><span>Array size</span><strong id="arraySizeMetric">24</strong><small>Values in the dataset</small></article>
+      <article class="metric"><span>Comparisons</span><strong id="comparisons">0</strong><small>Elements evaluated</small></article>
+      <article class="metric"><span>Array accesses</span><strong id="accesses">0</strong><small>Reads and writes</small></article>
+      <article class="metric"><span>Elapsed time</span><strong id="elapsed">0.0s</strong><small>Visualization runtime</small></article>
+    </section>
+    <section class="workspace">
+      <div class="visual-panel panel">
+        <div class="panel-head"><div><h2 id="visualTitle">Sorting playground</h2><p id="visualDescription">Compare how different strategies organize the same data.</p></div><span class="live-tag">● LIVE CANVAS</span></div>
+        <div class="chart-wrap"><div id="bars" class="bars" role="img" aria-label="Array visualization"></div><div class="chart-axis"><span>INDEX 0</span><span>VALUE HEIGHT</span><span id="lastIndex">INDEX 23</span></div></div>
+        <div class="legend"><span><i class="dot normal"></i>Unsorted</span><span><i class="dot compare"></i>Comparing</span><span><i class="dot swap"></i>Swapping</span><span><i class="dot sorted"></i>Sorted</span></div>
+        <div class="control-row"><button class="btn primary" id="runBtn">▶ Run algorithm</button><button class="btn" id="stepBtn">Step</button><button class="btn" id="shuffleBtn">⤨ Shuffle</button><button class="btn" id="resetBtn">↺ Reset</button></div>
+      </div>
+      <aside class="settings panel">
+        <div class="panel-head"><div><h2>Configuration</h2><p>Customize your experiment.</p></div><span class="gear">⚙</span></div>
+        <label class="field-label" for="algorithm">Algorithm</label><select id="algorithm"><option value="bubble">Bubble sort</option><option value="selection">Selection sort</option><option value="insertion">Insertion sort</option><option value="quick">Quick sort</option></select>
+        <div class="field-split"><label class="field-label" for="size">Array size <strong id="sizeValue">24</strong></label></div><input id="size" type="range" min="8" max="60" value="24">
+        <div class="range-labels"><span>8 values</span><span>60 values</span></div>
+        <div class="field-split"><label class="field-label" for="speed">Animation speed</label><strong id="speedValue" class="speed-value">Normal</strong></div><input id="speed" type="range" min="1" max="5" value="3">
+        <div class="range-labels"><span>Slow</span><span>Fast</span></div>
+        <div class="complexity-card"><span class="mini-label">TIME COMPLEXITY</span><strong id="timeComplexity">O(n²)</strong><p id="complexityText">Repeated comparisons move larger values toward the end.</p><div class="complexity-footer"><span>SPACE</span><strong id="spaceComplexity">O(1)</strong></div></div>
+      </aside>
+    </section>
+    <section class="bottom-grid">
+      <article class="panel code-panel"><div class="panel-head"><div><h2>Algorithm notes</h2><p>What to observe during execution.</p></div><span class="code-chip">C / PSEUDOCODE</span></div><div id="algorithmNotes" class="notes"></div><pre class="code-block" id="codeBlock"></pre></article>
+      <article class="panel activity-panel"><div class="panel-head"><div><h2>Execution log</h2><p>Recent visualization events.</p></div><button class="clear-btn" id="clearLog">Clear</button></div><div id="log" class="log"><div class="log-empty">Your algorithm events will appear here.</div></div><div class="completion"><div><span>Progress</span><strong id="progressText">0%</strong></div><div class="progress-track"><div id="progressBar"></div></div></div></article>
+    </section>
+    <footer><span>ALGOSPHERE</span><span>Built for curious minds · HTML · CSS · JavaScript · C</span></footer>
+  </main>
+</div>
+<script src="app.js"></script>
+</body></html>
